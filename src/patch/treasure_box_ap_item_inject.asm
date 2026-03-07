@@ -1,3 +1,13 @@
+; Remove the bit validation the game does since we use some custom data that mismatch it.
+.org 0x0209e3c8
+.area 20
+	nop
+	nop
+	nop
+	nop
+	nop
+.endarea
+
 ; 0209e404, originally mov r1,r0,lsl#0x3
 ; Replace the instruction.
 .org 0x0209e404

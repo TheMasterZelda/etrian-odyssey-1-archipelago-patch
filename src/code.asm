@@ -18,7 +18,10 @@
 .include "patch\class_selection_inject.asm"
 .include "patch\skill_available_inject.asm"
 .include "patch\stairs_restriction_inject.asm"
+.include "patch\elevator_restriction_inject.asm"
 .include "patch\shop_custom_menu_inject.asm"
+.include "patch\render_custom_variables_load_inject.asm"
+.include "patch\render_custom_variables_render_inject.asm"
 .include "patch\new_save_inject.asm"
 
 ; 0x020DC590 to 0x020DC5FF is reserved for static variables.
@@ -33,7 +36,10 @@
 	.include "patch\level_cap.asm"
 	.include "patch\skill_available.asm"
 	.include "patch\stairs_restriction.asm"
+	.include "patch\elevator_restriction.asm"
 	.include "patch\shop_custom_menu.asm"
+	.include "patch\render_custom_variables_load.asm"
+	.include "patch\render_custom_variables_render.asm"
 	.include "patch\new_save.asm"
 	
 	.include "custom_text.asm" ; Keep this at the end, since it can misalign instructions.
