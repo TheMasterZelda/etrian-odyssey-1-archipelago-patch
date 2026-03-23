@@ -18,8 +18,8 @@ LAB_STAIRS_RESTRICTION:
 	bl 0x0203c7d0 ; Checks if the textbox is closed.
 	cmp r0,#0x0
 	beq @LAB_FINALIZE
-	mov r0,#0x1
-	strb r0,[r1,#0xa20]
+	;mov r0,#0x1
+	;strb r0,[r1,#0xa20]
 	mov r0,r4
 	bl 0x02092b60
 	mov r0,r4

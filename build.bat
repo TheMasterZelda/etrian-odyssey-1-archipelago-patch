@@ -1,0 +1,1 @@
+.\tools\armips.exe .\src\code.asm
