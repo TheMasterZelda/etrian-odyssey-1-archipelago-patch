@@ -6,6 +6,9 @@ This project uses [armips](https://github.com/Kingcom/armips) to compile the ass
 
 The version bundled with the repository is a manual build for Windows. If you need to run this on a Unix environment, follow the link above and make a build manually.
 
+Related projects:
+- [APWorld](https://github.com/TheMasterZelda/Etrian_Odyssey_1_Archipelago)
+- [Patcher](https://github.com/TheMasterZelda/etrian-odyssey-1-archipelago-patcher)
 
 # How to build
 
