@@ -2,14 +2,21 @@
 ; Handle default class selection.
 .org 0x02044a5c
 .area 4
-	b @LAB_DEFAULT_CLASS_SELECTION
-@LAB_DEFAULT_CLASS_SELECTION_RETURN:
+	bl @LAB_DEFAULT_CLASS_SELECTION
+.endarea
+
+; Can use r0, r2, r12.
+; Handle default class selection on "create more".
+.org 0x02044e2c
+.area 4
+	bl @LAB_DEFAULT_CLASS_SELECTION
 .endarea
 
 ; This memory is hijacked from spare memory we get from editing how inputs handling works.
 .org 0x02043940
 .area 72
 @LAB_DEFAULT_CLASS_SELECTION:
+	stmdb sp!,{lr}
 	bl FUN_GET_CUSTOM_SAVE_CONTEXT_ADDR
 	add r0,r0,SC_CLASS_UNLOCK
 	mov r12,-1
@@ -20,8 +27,11 @@
 	cmp r2,0x00
 	beq @@LAB_LOOP
 	str r12,[r4,#0x100]
-	b @LAB_DEFAULT_CLASS_SELECTION_RETURN
+	mov r0,#0x0
+	ldmia sp!,{pc}
 .endarea
+
+
 
 ; Can use r0, r1, r2 and r12.
 ; Handle Down input.
