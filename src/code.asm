@@ -23,12 +23,15 @@
 .include "patch\render_custom_variables_load_inject.asm"
 .include "patch\render_custom_variables_render_inject.asm"
 .include "patch\new_save_inject.asm"
+.include "patch\fast_battle_inject.asm"
 
 ; 0x020DC590 to 0x020DC5FF is reserved for static variables.
 .include "static_variables.asm"
 
+; 0x020DC600 to 0x020DC63F is reserved for the playername injection
+
 ; Include all subpatch here.
-.org 0x020DC600
+.org 0x020DC640
 .area 0xC3F
 	.include "patch\get_custom_save_context_addr.asm"
 	.include "patch\experience_modifier.asm"
